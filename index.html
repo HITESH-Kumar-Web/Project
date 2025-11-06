@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Assignment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #eaeaea;
+            transition: 0.3s;
+        }
+
+        h1 {
+            margin-top: 30px;
+        }
+
+        .box-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 20px;
+        }
+
+        .box {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        #red { background: red; }
+        #blue { background: blue; }
+        #green { background: green; }
+        #yellow { background: yellow; color: black; }
+
+        .input-box {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="greetText">Hello</h1>
+
+    <div class="box-container">
+        <div class="box" id="red">Red</div>
+        <div class="box" id="blue">Blue</div>
+        <div class="box" id="green">Green</div>
+        <div class="box" id="yellow">Yellow</div>
+    </div>
+
+    <div class="input-box">
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button id="btn">Greet</button>
+    </div>
+
+    <script>
+        // Greet button function
+        document.getElementById("btn").addEventListener("click", function() {
+            let name = document.getElementById("nameInput").value;
+            document.getElementById("greetText").innerText = "Hello, " + name;
+        });
+
+        // Box click to change background
+        document.getElementById("red").addEventListener("click", function() {
+            document.body.style.backgroundColor = "red";
+        });
+
+        document.getElementById("blue").addEventListener("click", function() {
+            document.body.style.backgroundColor = "blue";
+        });
+
+        document.getElementById("green").addEventListener("click", function() {
+            document.body.style.backgroundColor = "green";
+        });
+
+        document.getElementById("yellow").addEventListener("click", function() {
+            document.body.style.backgroundColor = "yellow";
+        });
+    </script>
+
+</body>
+</html>
